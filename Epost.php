@@ -27,6 +27,10 @@ class Epost {
         $this->page = ($offset/$this->limit) + 1; return $this;
     }
 
+    public function setLimit($limit) {
+        $this->limit = $limit; return $this;
+    }
+
     public function getResult() {
 		$content  = file_get_contents($this->getUrl());
 		$xml      = simplexml_load_string($content, 'SimpleXMLElement', LIBXML_NOCDATA);
